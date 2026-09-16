@@ -5,16 +5,16 @@ export function Footer() {
   return (
     <footer className="border-t border-gray-200 bg-gray-50 dark:border-gray-800 dark:bg-gray-900/50">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-          <div className="col-span-1 md:col-span-1">
+        <div className="grid grid-cols-1 md:grid-cols-5 lg:grid-cols-6 gap-8 lg:gap-12">
+          <div className="col-span-1 md:col-span-2 lg:col-span-3">
             <Link href="/" className="flex items-center gap-2 mb-4 group">
               <FileJson className="h-5 w-5 text-gray-900 dark:text-gray-100" />
               <span className="font-semibold text-gray-900 dark:text-gray-100">
                 JSON Toolkit
               </span>
             </Link>
-            <p className="text-sm text-gray-500 dark:text-gray-400">
-              Simple, fast, and private tools for working with JSON directly in your browser.
+            <p className="text-sm text-gray-500 dark:text-gray-400 max-w-xs md:max-w-sm leading-relaxed text-justify">
+              A comprehensive suite of simple, fast, and private tools for working with JSON directly in your browser. Format, validate, and analyze your data securely without sending anything to a server.
             </p>
           </div>
           
