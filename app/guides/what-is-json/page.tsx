@@ -8,7 +8,7 @@ export const metadata: Metadata = {
 
 export default function WhatIsJsonPage() {
   return (
-    <PageContainer className="max-w-3xl">
+    <PageContainer>
       <ToolHeader 
         title="What is JSON?"
         description="An introduction to JavaScript Object Notation."
@@ -18,8 +18,9 @@ export default function WhatIsJsonPage() {
         ]}
       />
 
-      <div className="prose prose-gray dark:prose-invert max-w-none text-gray-600 dark:text-gray-400">
-        <p className="lead text-lg text-gray-700 dark:text-gray-300 font-medium">
+      <div className="mt-8 bg-white dark:bg-gray-950 border border-gray-200 dark:border-gray-800 rounded-2xl p-8 md:p-12 shadow-sm">
+        <div className="prose prose-slate dark:prose-invert max-w-none text-justify">
+        <p>
           JSON (JavaScript Object Notation) is a lightweight data-interchange format. It is easy for humans to read and write, and it is easy for machines to parse and generate.
         </p>
 
@@ -57,6 +58,7 @@ export default function WhatIsJsonPage() {
           <li><strong>Boolean:</strong> <code>true</code> or <code>false</code></li>
           <li><strong>Null:</strong> An empty value, written simply as <code>null</code>.</li>
         </ul>
+      </div>
       </div>
     </PageContainer>
   );

@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 
 export default function HowToValidateJsonPage() {
   return (
-    <PageContainer className="max-w-3xl">
+    <PageContainer>
       <ToolHeader 
         title="How to Validate JSON"
         description="Find and fix syntax errors."
@@ -20,8 +20,9 @@ export default function HowToValidateJsonPage() {
         ]}
       />
 
-      <div className="prose prose-gray dark:prose-invert max-w-none text-gray-600 dark:text-gray-400">
-        <p className="lead text-lg text-gray-700 dark:text-gray-300 font-medium mb-6">
+      <div className="mt-8 bg-white dark:bg-gray-950 border border-gray-200 dark:border-gray-800 rounded-2xl p-8 md:p-12 shadow-sm">
+        <div className="prose prose-slate dark:prose-invert max-w-none text-justify">
+        <p>
           Validating JSON means checking that a string strictly adheres to the JSON specification. If a single character is out of place, the entire string becomes invalid and cannot be parsed by applications.
         </p>
 
@@ -69,6 +70,7 @@ export default function HowToValidateJsonPage() {
         <Link href="/json-validator" className="inline-flex items-center gap-2 px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-lg font-medium transition-colors">
           Open JSON Validator <ArrowRight className="h-4 w-4" />
         </Link>
+      </div>
       </div>
     </PageContainer>
   );

@@ -8,7 +8,7 @@ export const metadata: Metadata = {
 
 export default function AboutPage() {
   return (
-    <PageContainer className="max-w-3xl">
+    <PageContainer>
       <ToolHeader 
         title="About JSON Toolkit"
         description="Simple, fast, and private JSON tools for developers and everyday users."
@@ -17,7 +17,8 @@ export default function AboutPage() {
         ]}
       />
 
-      <div className="prose prose-gray dark:prose-invert max-w-none">
+      <div className="mt-8 bg-white dark:bg-gray-950 border border-gray-200 dark:border-gray-800 rounded-2xl p-8 md:p-12 shadow-sm">
+        <div className="prose prose-slate dark:prose-invert max-w-none text-justify">
         <p className="text-lg text-gray-600 dark:text-gray-400">
           JSON Toolkit was created with a single goal: to provide the best possible experience for working with JSON data in the browser. 
         </p>
@@ -39,6 +40,7 @@ export default function AboutPage() {
         <p className="text-gray-600 dark:text-gray-400">
           This project is built using modern web technologies including Next.js, React, and Tailwind CSS. It is an example of what can be built when you focus on performance, usability, and privacy first.
         </p>
+      </div>
       </div>
     </PageContainer>
   );

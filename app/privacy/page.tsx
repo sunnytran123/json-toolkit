@@ -8,7 +8,7 @@ export const metadata: Metadata = {
 
 export default function PrivacyPage() {
   return (
-    <PageContainer className="max-w-3xl">
+    <PageContainer>
       <ToolHeader 
         title="Privacy Policy"
         description="We take your privacy seriously. Here is how we handle your data."
@@ -17,7 +17,8 @@ export default function PrivacyPage() {
         ]}
       />
 
-      <div className="prose prose-gray dark:prose-invert max-w-none text-gray-600 dark:text-gray-400">
+      <div className="mt-8 bg-white dark:bg-gray-950 border border-gray-200 dark:border-gray-800 rounded-2xl p-8 md:p-12 shadow-sm">
+        <div className="prose prose-slate dark:prose-invert max-w-none text-justify">
         <div className="bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-900/50 rounded-lg p-6 mb-8 text-blue-900 dark:text-blue-200">
           <h3 className="text-lg font-bold mb-2">TL;DR: We don't want your data.</h3>
           <p>
@@ -50,6 +51,7 @@ export default function PrivacyPage() {
         </p>
 
         <p className="text-sm mt-12 text-gray-500">Last updated: {new Date().toLocaleDateString()}</p>
+      </div>
       </div>
     </PageContainer>
   );

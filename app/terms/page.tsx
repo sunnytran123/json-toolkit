@@ -8,7 +8,7 @@ export const metadata: Metadata = {
 
 export default function TermsPage() {
   return (
-    <PageContainer className="max-w-3xl">
+    <PageContainer>
       <ToolHeader 
         title="Terms of Service"
         description="Please read these terms carefully before using JSON Toolkit."
@@ -17,7 +17,8 @@ export default function TermsPage() {
         ]}
       />
 
-      <div className="prose prose-gray dark:prose-invert max-w-none text-gray-600 dark:text-gray-400">
+      <div className="mt-8 bg-white dark:bg-gray-950 border border-gray-200 dark:border-gray-800 rounded-2xl p-8 md:p-12 shadow-sm">
+        <div className="prose prose-slate dark:prose-invert max-w-none text-justify">
         <h2 className="text-xl font-bold mt-8 mb-4 text-gray-900 dark:text-white">1. Acceptance of Terms</h2>
         <p className="mb-4">
           By accessing and using JSON Toolkit, you accept and agree to be bound by the terms and provision of this agreement.
@@ -42,6 +43,7 @@ export default function TermsPage() {
         </p>
 
         <p className="text-sm mt-12 text-gray-500">Last updated: {new Date().toLocaleDateString()}</p>
+      </div>
       </div>
     </PageContainer>
   );
