@@ -58,7 +58,7 @@ export function JsonToolbar({
             </Button>
             <input 
               type="file" 
-              accept=".json,application/json" 
+              accept=".json,application/json,.txt,text/plain" 
               ref={fileInputRef} 
               onChange={handleFileUpload} 
               className="hidden" 

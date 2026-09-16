@@ -1,6 +1,6 @@
 import React from "react";
 import Link from "next/link";
-import { ArrowRight, AlignLeft, CheckCircle, FileDown, Braces, SortAsc, FileJson, BarChart2, Code } from "lucide-react";
+import { ArrowRight, AlignLeft, CheckCircle, FileDown, Braces, FileJson, Code, Database, FileCode2 } from "lucide-react";
 
 interface RelatedToolsProps {
   currentTool: string;
@@ -11,10 +11,10 @@ const allTools = [
   { id: "validator", name: "JSON Validator", icon: CheckCircle, href: "/json-validator" },
   { id: "minifier", name: "JSON Minifier", icon: FileDown, href: "/json-minifier" },
   { id: "tree-viewer", name: "JSON Tree Viewer", icon: Braces, href: "/json-tree-viewer" },
-  { id: "sorter", name: "JSON Sorter", icon: SortAsc, href: "/json-sorter" },
   { id: "csv", name: "JSON to CSV", icon: FileJson, href: "/json-to-csv" },
   { id: "ts", name: "JSON to TS", icon: Code, href: "/json-to-ts" },
-  { id: "statistics", name: "JSON Statistics", icon: BarChart2, href: "/json-statistics" },
+  { id: "xml", name: "JSON to XML", icon: FileCode2, href: "/json-to-xml" },
+  { id: "sql", name: "JSON to SQL", icon: Database, href: "/json-to-sql" },
 ];
 
 export function RelatedTools({ currentTool }: RelatedToolsProps) {

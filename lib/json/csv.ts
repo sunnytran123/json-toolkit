@@ -2,10 +2,22 @@ export function jsonToCsv(input: string): string {
   if (!input.trim()) return "";
   
   try {
-    const parsed = JSON.parse(input);
+    let parsed = JSON.parse(input);
     
+    // If not an array, try to find an array inside the object
     if (!Array.isArray(parsed)) {
-      throw new Error("JSON must be an array of objects to convert to CSV");
+      if (typeof parsed === 'object' && parsed !== null) {
+        const arrayKeys = Object.keys(parsed).filter(key => Array.isArray(parsed[key]));
+        if (arrayKeys.length === 1) {
+          parsed = parsed[arrayKeys[0]];
+        } else if (arrayKeys.length > 1) {
+          throw new Error("JSON object contains multiple arrays. Please provide a single array of objects.");
+        } else {
+          throw new Error("JSON must be an array of objects to convert to CSV");
+        }
+      } else {
+        throw new Error("JSON must be an array of objects to convert to CSV");
+      }
     }
     
     if (parsed.length === 0) {

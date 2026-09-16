@@ -6,14 +6,13 @@ import { JsonEditor } from "@/components/json/JsonEditor";
 import { JsonToolbar } from "@/components/json/JsonToolbar";
 import { RelatedTools } from "@/components/content/RelatedTools";
 import { FAQ } from "@/components/content/FAQ";
-import { jsonToCsv } from "@/lib/json/csv";
+import { jsonToXml } from "@/lib/json/xml";
 import { sampleData } from "@/lib/json/samples";
 import { useCopyToClipboard } from "@/hooks/useCopyToClipboard";
 import { useDownload } from "@/hooks/useDownload";
-// Button and Play removed as they are no longer needed
 import { faq } from "./faq";
 
-export default function JsonToCsvPage() {
+export default function JsonToXmlPage() {
   const [input, setInput] = useState("");
   const [output, setOutput] = useState("");
   const [error, setError] = useState<string | null>(null);
@@ -27,8 +26,8 @@ export default function JsonToCsvPage() {
       return;
     }
     try {
-      const csv = jsonToCsv(input);
-      setOutput(csv);
+      const xml = jsonToXml(input);
+      setOutput(xml);
       setError(null);
     } catch (e: any) {
       setError(e.message || "Failed to convert JSON");
@@ -36,7 +35,7 @@ export default function JsonToCsvPage() {
   }, [input]);
 
   const handleSample = () => {
-    const data = JSON.stringify(sampleData.csv, null, 2);
+    const data = JSON.stringify(sampleData.xml, null, 2);
     setInput(data);
     setError(null);
   };
@@ -52,17 +51,17 @@ export default function JsonToCsvPage() {
   };
 
   const handleDownload = () => {
-    if (output) downloadFile(output, "output.csv", "text/csv");
+    if (output) downloadFile(output, "output.xml", "application/xml");
   };
 
   return (
     <PageContainer>
       <ToolHeader 
-        title="JSON to CSV"
-        description="Convert JSON arrays into tabular CSV format for use in Excel or Google Sheets."
+        title="JSON to XML"
+        description="Instantly convert JSON objects into valid XML format."
         breadcrumbItems={[
           { label: "JSON Tools", href: "/#tools" },
-          { label: "JSON to CSV" }
+          { label: "JSON to XML" }
         ]}
       />
 
@@ -86,20 +85,20 @@ export default function JsonToCsvPage() {
         {/* Output Section */}
         <div className="flex flex-col h-full shadow-sm rounded-lg">
           <JsonToolbar
-            title="CSV Output"
+            title="XML Output"
             onCopy={handleCopy}
             onDownload={handleDownload}
           />
           <JsonEditor
             value={output}
             readOnly
-            placeholder="Converted CSV will appear here..."
+            placeholder="Converted XML will appear here..."
             className="rounded-t-none border-t-0 bg-gray-50/50 dark:bg-gray-950/50"
           />
         </div>
       </div>
 
-      <RelatedTools currentTool="csv" />
+      <RelatedTools currentTool="xml" />
       
       <FAQ items={faq} />
     </PageContainer>

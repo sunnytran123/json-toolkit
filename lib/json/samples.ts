@@ -80,15 +80,25 @@ export const sampleData = {
       }
     ]
   },
-  sorter: {
-    "zebra": 1,
-    "apple": 2,
-    "user": {
-      "lastName": "Smith",
-      "firstName": "John",
-      "age": 30
-    },
-    "banana": 3
+  xml: {
+    "bookstore": {
+      "book": [
+        {
+          "category": "COOKING",
+          "title": "Everyday Italian",
+          "author": "Giada De Laurentiis",
+          "year": 2005,
+          "price": 30.00
+        },
+        {
+          "category": "CHILDREN",
+          "title": "Harry Potter",
+          "author": "J K. Rowling",
+          "year": 2005,
+          "price": 29.99
+        }
+      ]
+    }
   },
   csv: [
     {
@@ -110,25 +120,20 @@ export const sampleData = {
       "salary": 105000
     }
   ],
-  statistics: {
-    "datasetId": "ds_445",
-    "metadata": {
-      "createdAt": "2023-10-01T10:00:00Z",
-      "updatedAt": "2023-10-05T14:30:00Z",
-      "author": "Data Team"
+  sql: [
+    {
+      "id": 101,
+      "username": "johndoe",
+      "email": "john@example.com",
+      "isActive": true,
+      "age": 28
     },
-    "records": [
-      { "id": 1, "value": 100 },
-      { "id": 2, "value": 200 },
-      { "id": 3, "value": 300 }
-    ],
-    "config": {
-      "retries": 3,
-      "timeoutMs": 5000,
-      "features": {
-        "enableCache": true,
-        "enableLogging": false
-      }
+    {
+      "id": 102,
+      "username": "janedoe",
+      "email": "jane@example.com",
+      "isActive": false,
+      "age": 32
     }
-  }
+  ]
 };
