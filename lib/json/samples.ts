@@ -1,4 +1,19 @@
 export const sampleData = {
+  ts: {
+    id: 1,
+    name: "John Doe",
+    email: "john@example.com",
+    roles: ["admin", "editor"],
+    isActive: true,
+    profile: {
+      age: 30,
+      city: "New York"
+    },
+    history: [
+      { loginId: "abc", date: "2023-01-01" },
+      { loginId: "xyz", date: "2023-01-02" }
+    ]
+  },
   formatter: {
     "user": {
       "id": 101,

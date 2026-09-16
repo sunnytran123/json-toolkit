@@ -27,6 +27,7 @@ export function Footer() {
               <li><Link href="/json-tree-viewer" className="hover:text-gray-900 dark:hover:text-gray-100 transition-colors">JSON Tree Viewer</Link></li>
               <li><Link href="/json-sorter" className="hover:text-gray-900 dark:hover:text-gray-100 transition-colors">JSON Sorter</Link></li>
               <li><Link href="/json-to-csv" className="hover:text-gray-900 dark:hover:text-gray-100 transition-colors">JSON to CSV</Link></li>
+              <li><Link href="/json-to-ts" className="hover:text-gray-900 dark:hover:text-gray-100 transition-colors">JSON to TS</Link></li>
               <li><Link href="/json-statistics" className="hover:text-gray-900 dark:hover:text-gray-100 transition-colors">JSON Statistics</Link></li>
             </ul>
           </div>
@@ -49,12 +50,9 @@ export function Footer() {
           </div>
         </div>
         
-        <div className="mt-12 pt-8 border-t border-gray-200 dark:border-gray-800 flex flex-col md:flex-row items-center justify-between gap-4">
+        <div className="mt-12 pt-8 border-t border-gray-200 dark:border-gray-800 flex justify-center">
           <p className="text-sm text-gray-500 dark:text-gray-400">
             © {new Date().getFullYear()} JSON Toolkit. All rights reserved.
-          </p>
-          <p className="text-xs text-gray-400 dark:text-gray-500">
-            Everything runs locally in your browser.
           </p>
         </div>
       </div>

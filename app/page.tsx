@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowRight, Braces, CheckCircle, AlignLeft, FileJson, SortAsc, FileDown, BarChart2 } from "lucide-react";
+import { ArrowRight, Braces, CheckCircle, AlignLeft, FileJson, SortAsc, FileDown, BarChart2, Code } from "lucide-react";
 import { Button } from "@/components/ui/Button";
 import { PageContainer } from "@/components/layout/PageContainer";
 
@@ -11,6 +11,7 @@ export default function Home() {
     { name: "JSON Tree Viewer", description: "Visualize JSON as a tree.", icon: Braces, href: "/json-tree-viewer" },
     { name: "JSON Sorter", description: "Sort JSON keys alphabetically.", icon: SortAsc, href: "/json-sorter" },
     { name: "JSON to CSV", description: "Convert JSON array to CSV.", icon: FileJson, href: "/json-to-csv" },
+    { name: "JSON to TS", description: "Convert JSON to TypeScript.", icon: Code, href: "/json-to-ts" },
     { name: "JSON Statistics", description: "Analyze JSON size, depth, and keys.", icon: BarChart2, href: "/json-statistics" },
   ];
 

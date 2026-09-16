@@ -1,6 +1,6 @@
 import React from "react";
 import Link from "next/link";
-import { ArrowRight, AlignLeft, CheckCircle, FileDown, Braces, SortAsc, FileJson, BarChart2 } from "lucide-react";
+import { ArrowRight, AlignLeft, CheckCircle, FileDown, Braces, SortAsc, FileJson, BarChart2, Code } from "lucide-react";
 
 interface RelatedToolsProps {
   currentTool: string;
@@ -13,14 +13,14 @@ const allTools = [
   { id: "tree-viewer", name: "JSON Tree Viewer", icon: Braces, href: "/json-tree-viewer" },
   { id: "sorter", name: "JSON Sorter", icon: SortAsc, href: "/json-sorter" },
   { id: "csv", name: "JSON to CSV", icon: FileJson, href: "/json-to-csv" },
+  { id: "ts", name: "JSON to TS", icon: Code, href: "/json-to-ts" },
   { id: "statistics", name: "JSON Statistics", icon: BarChart2, href: "/json-statistics" },
 ];
 
 export function RelatedTools({ currentTool }: RelatedToolsProps) {
-  // Filter out the current tool and take up to 4 others
   const tools = allTools
     .filter(tool => tool.id !== currentTool)
-    .sort(() => 0.5 - Math.random()) // Simple shuffle for variety
+    .sort(() => 0.5 - Math.random())
     .slice(0, 4);
 
   return (
