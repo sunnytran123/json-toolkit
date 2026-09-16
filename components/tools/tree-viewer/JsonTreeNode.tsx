@@ -7,9 +7,10 @@ interface JsonTreeNodeProps {
   value: any;
   isLast?: boolean;
   defaultExpanded?: boolean;
+  childDefaultExpanded?: boolean;
 }
 
-export function JsonTreeNode({ label, value, isLast = true, defaultExpanded = true }: JsonTreeNodeProps) {
+export function JsonTreeNode({ label, value, isLast = true, defaultExpanded = true, childDefaultExpanded = true }: JsonTreeNodeProps) {
   const [expanded, setExpanded] = useState(defaultExpanded);
 
   const isObject = value !== null && typeof value === 'object';
@@ -85,6 +86,8 @@ export function JsonTreeNode({ label, value, isLast = true, defaultExpanded = tr
               label={isArray ? '' : key} 
               value={val} 
               isLast={index === arr.length - 1} 
+              defaultExpanded={childDefaultExpanded}
+              childDefaultExpanded={childDefaultExpanded}
             />
           ))}
           <div className={cn(

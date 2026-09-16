@@ -19,6 +19,7 @@ export default function JsonTreeViewerPage() {
 
   // We use a simple key change to force re-render of the tree for collapse/expand all
   const [treeKey, setTreeKey] = useState(0);
+  const [expandAll, setExpandAll] = useState(true);
 
   useEffect(() => {
     if (!input.trim()) {
@@ -83,8 +84,11 @@ export default function JsonTreeViewerPage() {
             <span className="font-medium text-sm text-gray-700 dark:text-gray-300">Tree Viewer</span>
             {parsedData && (
               <div className="flex gap-2">
-                <Button variant="outline" size="sm" onClick={() => setTreeKey(k => k + 1)} className="text-xs h-8">
-                  Redraw
+                <Button variant="outline" size="sm" onClick={() => { setExpandAll(true); setTreeKey(k => k + 1); }} className="text-xs h-8">
+                  Expand All
+                </Button>
+                <Button variant="outline" size="sm" onClick={() => { setExpandAll(false); setTreeKey(k => k + 1); }} className="text-xs h-8">
+                  Collapse All
                 </Button>
               </div>
             )}
@@ -92,7 +96,13 @@ export default function JsonTreeViewerPage() {
           <div className="flex-grow p-4 overflow-auto bg-white dark:bg-gray-950 text-sm">
             {parsedData ? (
               <div className="min-w-fit" key={treeKey}>
-                <JsonTreeNode label="" value={parsedData} isLast={true} />
+                <JsonTreeNode 
+                  label="" 
+                  value={parsedData} 
+                  isLast={true} 
+                  defaultExpanded={true}
+                  childDefaultExpanded={expandAll}
+                />
               </div>
             ) : (
               <div className="h-full flex items-center justify-center text-gray-400">

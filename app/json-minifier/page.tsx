@@ -32,7 +32,7 @@ export default function JsonMinifierPage() {
       const minified = minifyJson(input);
       setOutput(minified);
       setError(null);
-      
+
       // Calculate savings
       const origSize = new Blob([input]).size;
       const minSize = new Blob([minified]).size;
@@ -65,7 +65,7 @@ export default function JsonMinifierPage() {
   };
 
   const handleDownload = () => {
-    if (output) downloadFile(output, "minified.json");
+    if (output) downloadFile(output, "minified.txt", "text/plain");
   };
 
   const formatBytes = (bytes: number) => {
@@ -78,7 +78,7 @@ export default function JsonMinifierPage() {
 
   return (
     <PageContainer>
-      <ToolHeader 
+      <ToolHeader
         title="JSON Minifier"
         description="Compress your JSON by removing whitespace, line breaks, and indentation."
         breadcrumbItems={[
@@ -113,7 +113,7 @@ export default function JsonMinifierPage() {
             actions={
               stats && (
                 <div className="text-xs font-medium text-green-600 dark:text-green-500 bg-green-50 dark:bg-green-900/20 px-2 py-1 rounded">
-                  Saved {stats.saved.toFixed(1)}%
+                  Saved
                 </div>
               )
             }
@@ -128,7 +128,7 @@ export default function JsonMinifierPage() {
       </div>
 
       <RelatedTools currentTool="minifier" />
-      
+
       <FAQ items={faq} />
     </PageContainer>
   );
