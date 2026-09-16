@@ -15,12 +15,12 @@ export function FAQ({ items }: FAQProps) {
   return (
     <div className="mt-16 pt-12 border-t border-gray-200 dark:border-gray-800">
       <h2 className="text-xl font-bold tracking-tight text-gray-900 dark:text-white mb-6">
-        Frequently Asked Questions
+        FAQ
       </h2>
       <div className="space-y-4">
         {items.map((item, i) => (
-          <details 
-            key={i} 
+          <details
+            key={i}
             className="group rounded-xl border border-gray-200 bg-white dark:bg-gray-950 dark:border-gray-800 [&_summary::-webkit-details-marker]:hidden"
           >
             <summary className="flex cursor-pointer items-center justify-between gap-1.5 p-4 text-gray-900 dark:text-white font-medium">

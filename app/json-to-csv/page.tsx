@@ -12,6 +12,7 @@ import { useCopyToClipboard } from "@/hooks/useCopyToClipboard";
 import { useDownload } from "@/hooks/useDownload";
 import { Play } from "lucide-react";
 import { Button } from "@/components/ui/Button";
+import { faq } from "./faq";
 
 export default function JsonToCsvPage() {
   const [input, setInput] = useState("");
@@ -58,7 +59,7 @@ export default function JsonToCsvPage() {
         title="JSON to CSV"
         description="Convert JSON arrays into tabular CSV format for use in Excel or Google Sheets."
         breadcrumbItems={[
-          { label: "JSON Tools", href: "/json-tools" },
+          { label: "JSON Tools", href: "/#tools" },
           { label: "JSON to CSV" }
         ]}
       />
@@ -104,16 +105,7 @@ export default function JsonToCsvPage() {
 
       <RelatedTools currentTool="csv" />
       
-      <FAQ items={[
-        {
-          question: "What kind of JSON can be converted to CSV?",
-          answer: "The JSON must be an array of objects, e.g., [{ \"name\": \"John\", \"age\": 30 }, { \"name\": \"Jane\", \"age\": 25 }]. Keys will be used as CSV column headers."
-        },
-        {
-          question: "What happens to nested JSON objects?",
-          answer: "Nested objects and arrays are stringified into standard JSON string representations within their respective CSV cell."
-        }
-      ]} />
+      <FAQ items={faq} />
     </PageContainer>
   );
 }

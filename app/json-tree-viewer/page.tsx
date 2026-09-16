@@ -10,6 +10,7 @@ import { JsonTreeNode } from "@/components/tools/tree-viewer/JsonTreeNode";
 import { sampleData } from "@/lib/json/samples";
 import { Play } from "lucide-react";
 import { Button } from "@/components/ui/Button";
+import { faq } from "./faq";
 
 export default function JsonTreeViewerPage() {
   const [input, setInput] = useState("");
@@ -50,7 +51,7 @@ export default function JsonTreeViewerPage() {
         title="JSON Tree Viewer"
         description="Visualize and explore JSON data as an interactive, collapsible tree structure."
         breadcrumbItems={[
-          { label: "JSON Tools", href: "/json-tools" },
+          { label: "JSON Tools", href: "/#tools" },
           { label: "JSON Tree Viewer" }
         ]}
       />
@@ -106,16 +107,7 @@ export default function JsonTreeViewerPage() {
 
       <RelatedTools currentTool="tree-viewer" />
       
-      <FAQ items={[
-        {
-          question: "How do I navigate the tree?",
-          answer: "Click on any line with an arrow to expand or collapse that object or array. This makes it easy to read large nested JSON files."
-        },
-        {
-          question: "Why would I use a tree viewer instead of formatting?",
-          answer: "When a JSON file is very large (e.g., thousands of lines), formatting it can still leave it difficult to read. A tree viewer allows you to collapse sections you don't care about and focus on the data you need."
-        }
-      ]} />
+      <FAQ items={faq} />
     </PageContainer>
   );
 }

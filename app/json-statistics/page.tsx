@@ -10,6 +10,7 @@ import { analyzeJson, formatBytes, JsonStats } from "@/lib/json/statistics";
 import { sampleData } from "@/lib/json/samples";
 import { Play, Database, List, Hash, Type, Layers, HardDrive } from "lucide-react";
 import { Button } from "@/components/ui/Button";
+import { faq } from "./faq";
 
 export default function JsonStatisticsPage() {
   const [input, setInput] = useState("");
@@ -47,7 +48,7 @@ export default function JsonStatisticsPage() {
         title="JSON Statistics"
         description="Analyze your JSON data to get insights on size, depth, node counts, and structure."
         breadcrumbItems={[
-          { label: "JSON Tools", href: "/json-tools" },
+          { label: "JSON Tools", href: "/#tools" },
           { label: "JSON Statistics" }
         ]}
       />
@@ -149,16 +150,7 @@ export default function JsonStatisticsPage() {
 
       <RelatedTools currentTool="statistics" />
       
-      <FAQ items={[
-        {
-          question: "What is Max Depth?",
-          answer: "Max depth refers to the deepest level of nested objects or arrays in your JSON. A flat JSON has a depth of 1."
-        },
-        {
-          question: "What counts as a Primitive Value?",
-          answer: "Strings, numbers, booleans, and null are counted as primitive values. Objects and arrays themselves are structures, not primitive values."
-        }
-      ]} />
+      <FAQ items={faq} />
     </PageContainer>
   );
 }

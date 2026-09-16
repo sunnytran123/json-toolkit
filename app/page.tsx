@@ -19,10 +19,7 @@ export default function Home() {
       {/* Hero Section */}
       <section className="bg-gray-50 dark:bg-gray-900/30 border-b border-gray-200 dark:border-gray-800">
         <PageContainer className="py-20 md:py-32 text-center max-w-4xl mx-auto">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 text-blue-700 text-sm font-medium mb-6 dark:bg-blue-900/30 dark:text-blue-400 ring-1 ring-blue-700/10 dark:ring-blue-400/20">
-            <span className="flex h-2 w-2 rounded-full bg-blue-600 dark:bg-blue-500"></span>
-            100% Client-side Processing
-          </div>
+
           <h1 className="text-4xl md:text-6xl font-bold tracking-tight text-gray-900 dark:text-white mb-6">
             JSON Toolkit
           </h1>
@@ -35,17 +32,17 @@ export default function Home() {
                 Get Started <ArrowRight className="h-4 w-4" />
               </Button>
             </Link>
-            <Link href="/json-tools">
+            <a href="#tools">
               <Button size="lg" variant="outline">
                 View All Tools
               </Button>
-            </Link>
+            </a>
           </div>
         </PageContainer>
       </section>
 
       {/* Tools Section */}
-      <section className="py-16 md:py-24">
+      <section id="tools" className="py-16 md:py-24">
         <PageContainer>
           <div className="text-center mb-12">
             <h2 className="text-2xl md:text-3xl font-bold tracking-tight text-gray-900 dark:text-white mb-4">

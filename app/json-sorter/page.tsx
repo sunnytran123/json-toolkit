@@ -12,6 +12,7 @@ import { useCopyToClipboard } from "@/hooks/useCopyToClipboard";
 import { useDownload } from "@/hooks/useDownload";
 import { Play } from "lucide-react";
 import { Button } from "@/components/ui/Button";
+import { faq } from "./faq";
 
 export default function JsonSorterPage() {
   const [input, setInput] = useState("");
@@ -59,7 +60,7 @@ export default function JsonSorterPage() {
         title="JSON Sorter"
         description="Recursively sort JSON keys alphabetically (A-Z or Z-A)."
         breadcrumbItems={[
-          { label: "JSON Tools", href: "/json-tools" },
+          { label: "JSON Tools", href: "/#tools" },
           { label: "JSON Sorter" }
         ]}
       />
@@ -115,16 +116,7 @@ export default function JsonSorterPage() {
 
       <RelatedTools currentTool="sorter" />
       
-      <FAQ items={[
-        {
-          question: "Does this sort arrays as well?",
-          answer: "No, this tool specifically sorts object keys. Array items retain their original order."
-        },
-        {
-          question: "Does it sort nested objects?",
-          answer: "Yes, the sorting is recursive. It will sort the keys of the main object and all nested objects."
-        }
-      ]} />
+      <FAQ items={faq} />
     </PageContainer>
   );
 }
