@@ -34,18 +34,6 @@ const guides = [
     href: "/guides/understanding-json-schema",
     date: "Sep 2026"
   },
-  {
-    title: "Minifying JSON",
-    description: "Strategies for payload minification to optimize network bandwidth utilization and reduce latency in distributed systems.",
-    href: "/guides/minifying-json",
-    date: "Sep 2026"
-  },
-  {
-    title: "JSON vs. XML",
-    description: "An analytical comparison between JSON and XML, detailing the paradigm shift toward JSON in modern RESTful API architectures.",
-    href: "/guides/json-vs-xml",
-    date: "Sep 2026"
-  }
 ];
 
 export default function GuidesPage() {
@@ -61,7 +49,7 @@ export default function GuidesPage() {
         </p>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-12 max-w-6xl mx-auto">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-12 max-w-5xl mx-auto">
         {guides.map((guide, idx) => (
           <Link 
             key={idx} 
