@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { FileJson, Menu } from "lucide-react";
 import { Button } from "@/components/ui/Button";
+import { ThemeToggle } from "@/components/ui/ThemeToggle";
 
 export function Header() {
   return (
@@ -17,24 +18,28 @@ export function Header() {
           </Link>
         </div>
 
-        {/* Desktop Navigation */}
-        <nav className="hidden md:flex items-center gap-6">
-          <Link href="/json-tools" className="text-sm font-medium text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-50 transition-colors">
-            Tools
-          </Link>
-          <Link href="/guides" className="text-sm font-medium text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-50 transition-colors">
-            Guides
-          </Link>
-          <Link href="/about" className="text-sm font-medium text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-50 transition-colors">
-            About
-          </Link>
-        </nav>
+        <div className="flex items-center gap-4">
+          {/* Desktop Navigation */}
+          <nav className="hidden md:flex items-center gap-6">
+            <Link href="/json-tools" className="text-sm font-medium text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-50 transition-colors">
+              Tools
+            </Link>
+            <Link href="/guides" className="text-sm font-medium text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-50 transition-colors">
+              Guides
+            </Link>
+            <Link href="/about" className="text-sm font-medium text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-50 transition-colors">
+              About
+            </Link>
+          </nav>
 
-        {/* Mobile Navigation Toggle */}
-        <div className="flex md:hidden items-center">
-          <Button variant="ghost" size="icon" aria-label="Toggle Menu">
-            <Menu className="h-5 w-5" />
-          </Button>
+          <ThemeToggle />
+
+          {/* Mobile Navigation Toggle */}
+          <div className="flex md:hidden items-center">
+            <Button variant="ghost" size="icon" aria-label="Toggle Menu">
+              <Menu className="h-5 w-5" />
+            </Button>
+          </div>
         </div>
       </div>
     </header>
