@@ -2,6 +2,7 @@ import Link from "next/link";
 import { ArrowRight, Braces, CheckCircle, AlignLeft, FileJson, SortAsc, FileDown, BarChart2, Code } from "lucide-react";
 import { Button } from "@/components/ui/Button";
 import { PageContainer } from "@/components/layout/PageContainer";
+import { HeroBackground } from "@/components/ui/HeroBackground";
 
 export default function Home() {
   const tools = [
@@ -18,10 +19,13 @@ export default function Home() {
   return (
     <div>
       {/* Hero Section */}
-      <section className="bg-gray-50 dark:bg-gray-900/30 border-b border-gray-200 dark:border-gray-800">
-        <PageContainer className="py-20 md:py-32 text-center max-w-4xl mx-auto">
+      <section className="relative overflow-hidden bg-gray-50 dark:bg-gray-900/30 border-b border-gray-200 dark:border-gray-800">
+        {/* Abstract Background Effect */}
+        <HeroBackground />
 
-          <h1 className="text-4xl md:text-5xl font-bold tracking-tight text-gray-900 dark:text-white mb-6">
+        <PageContainer className="relative z-10 py-20 md:py-32 text-center max-w-4xl mx-auto">
+
+          <h1 className="text-4xl md:text-5xl font-extrabold tracking-tight mb-6 bg-clip-text text-transparent bg-gradient-to-r from-blue-600 via-indigo-500 to-cyan-500 hover:scale-105 transition-transform duration-300 inline-block">
             JSON Toolkit
           </h1>
           <p className="text-xl text-gray-600 dark:text-gray-400 mb-10 max-w-2xl mx-auto">
