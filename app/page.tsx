@@ -20,7 +20,7 @@ export default function Home() {
       <section className="bg-gray-50 dark:bg-gray-900/30 border-b border-gray-200 dark:border-gray-800">
         <PageContainer className="py-20 md:py-32 text-center max-w-4xl mx-auto">
 
-          <h1 className="text-4xl md:text-6xl font-bold tracking-tight text-gray-900 dark:text-white mb-6">
+          <h1 className="text-4xl md:text-5xl font-bold tracking-tight text-gray-900 dark:text-white mb-6">
             JSON Toolkit
           </h1>
           <p className="text-xl text-gray-600 dark:text-gray-400 mb-10 max-w-2xl mx-auto">
@@ -48,8 +48,8 @@ export default function Home() {
             <h2 className="text-2xl md:text-3xl font-bold tracking-tight text-gray-900 dark:text-white mb-4">
               Everything you need
             </h2>
-            <p className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
-              Free, no registration required, completely private. Your data never leaves your browser.
+            <p className="text-gray-500 dark:text-gray-400 max-w-2xl mx-auto">
+              Clean, validate, and convert JSON data instantly with ease.
             </p>
           </div>
 
@@ -57,8 +57,8 @@ export default function Home() {
             {tools.map((tool) => {
               const Icon = tool.icon;
               return (
-                <Link 
-                  key={tool.name} 
+                <Link
+                  key={tool.name}
                   href={tool.href}
                   className="group relative flex flex-col items-start p-6 rounded-2xl border border-gray-200 bg-white hover:border-gray-300 hover:shadow-sm transition-all dark:bg-gray-950 dark:border-gray-800 dark:hover:border-gray-700"
                 >
@@ -73,30 +73,45 @@ export default function Home() {
           </div>
         </PageContainer>
       </section>
-      
+
       {/* Features/Benefits */}
       <section className="bg-gray-50 py-16 dark:bg-gray-900/30 border-t border-gray-200 dark:border-gray-800">
         <PageContainer className="max-w-4xl mx-auto">
-          <div className="grid grid-cols-2 md:grid-cols-5 gap-8 text-center text-sm font-medium text-gray-600 dark:text-gray-400">
+          <div className="grid grid-cols-2 md:grid-cols-5 gap-8 text-center text-sm text-gray-600 dark:text-gray-400">
             <div className="flex flex-col items-center gap-2">
-              <div className="h-10 w-10 rounded-full bg-gray-200 dark:bg-gray-800 flex items-center justify-center mb-2">Free</div>
-              No hidden fees
+              <div className="h-12 w-12 rounded-full bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 flex items-center justify-center mb-2 text-blue-600 dark:text-blue-400 shadow-sm transition-transform hover:scale-105">
+                <AlignLeft className="h-5 w-5" />
+              </div>
+              <span className="font-semibold text-gray-900 dark:text-gray-100">Format</span>
+              <span className="text-xs text-gray-500">Beautify data</span>
             </div>
             <div className="flex flex-col items-center gap-2">
-              <div className="h-10 w-10 rounded-full bg-gray-200 dark:bg-gray-800 flex items-center justify-center mb-2">No Reg</div>
-              No account needed
+              <div className="h-12 w-12 rounded-full bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 flex items-center justify-center mb-2 text-blue-600 dark:text-blue-400 shadow-sm transition-transform hover:scale-105">
+                <CheckCircle className="h-5 w-5" />
+              </div>
+              <span className="font-semibold text-gray-900 dark:text-gray-100">Validate</span>
+              <span className="text-xs text-gray-500">Find syntax errors</span>
             </div>
             <div className="flex flex-col items-center gap-2">
-              <div className="h-10 w-10 rounded-full bg-gray-200 dark:bg-gray-800 flex items-center justify-center mb-2">Private</div>
-              Data stays local
+              <div className="h-12 w-12 rounded-full bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 flex items-center justify-center mb-2 text-blue-600 dark:text-blue-400 shadow-sm transition-transform hover:scale-105">
+                <FileDown className="h-5 w-5" />
+              </div>
+              <span className="font-semibold text-gray-900 dark:text-gray-100">Minify</span>
+              <span className="text-xs text-gray-500">Compress files</span>
             </div>
             <div className="flex flex-col items-center gap-2">
-              <div className="h-10 w-10 rounded-full bg-gray-200 dark:bg-gray-800 flex items-center justify-center mb-2">Browser</div>
-              No downloads
+              <div className="h-12 w-12 rounded-full bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 flex items-center justify-center mb-2 text-blue-600 dark:text-blue-400 shadow-sm transition-transform hover:scale-105">
+                <Braces className="h-5 w-5" />
+              </div>
+              <span className="font-semibold text-gray-900 dark:text-gray-100">Tree View</span>
+              <span className="text-xs text-gray-500">Explore structures</span>
             </div>
             <div className="flex flex-col items-center gap-2 col-span-2 md:col-span-1">
-              <div className="h-10 w-10 rounded-full bg-gray-200 dark:bg-gray-800 flex items-center justify-center mb-2">Fast</div>
-              Instant results
+              <div className="h-12 w-12 rounded-full bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 flex items-center justify-center mb-2 text-blue-600 dark:text-blue-400 shadow-sm transition-transform hover:scale-105">
+                <FileJson className="h-5 w-5" />
+              </div>
+              <span className="font-semibold text-gray-900 dark:text-gray-100">Convert</span>
+              <span className="text-xs text-gray-500">JSON to CSV</span>
             </div>
           </div>
         </PageContainer>

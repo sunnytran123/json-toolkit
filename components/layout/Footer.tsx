@@ -14,7 +14,7 @@ export function Footer() {
               </span>
             </Link>
             <p className="text-sm text-gray-500 dark:text-gray-400 max-w-xs md:max-w-sm leading-relaxed text-justify">
-              A comprehensive suite of simple, fast, and private tools for working with JSON directly in your browser. Format, validate, and analyze your data securely without sending anything to a server.
+              An all-in-one toolkit to effortlessly format, validate, minify, and convert JSON data. Designed to help you clean up messy code, catch syntax errors instantly, and organize complex data structures with ease.
             </p>
           </div>
           
