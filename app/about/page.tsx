@@ -1,4 +1,5 @@
-import { PageContainer, ToolHeader } from "@/components/layout/PageContainer";
+import { PageContainer } from "@/components/layout/PageContainer";
+import { Breadcrumb } from "@/components/navigation/Breadcrumb";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -9,38 +10,48 @@ export const metadata: Metadata = {
 export default function AboutPage() {
   return (
     <PageContainer>
-      <ToolHeader 
-        title="About JSON Toolkit"
-        description="Simple, fast, and private JSON tools for developers and everyday users."
-        breadcrumbItems={[
-          { label: "About" }
-        ]}
-      />
-
-      <div className="mt-8 bg-white dark:bg-gray-950 border border-gray-200 dark:border-gray-800 rounded-2xl p-8 md:p-12 shadow-sm">
-        <div className="prose prose-slate dark:prose-invert max-w-none text-justify">
-        <p className="text-lg text-gray-600 dark:text-gray-400">
-          JSON Toolkit was created with a single goal: to provide the best possible experience for working with JSON data in the browser. 
-        </p>
-
-        <h2 className="text-xl font-bold mt-8 mb-4 text-gray-900 dark:text-white">Our Philosophy</h2>
-        <ul className="space-y-4 text-gray-600 dark:text-gray-400">
-          <li>
-            <strong className="text-gray-900 dark:text-gray-200">100% Client-Side:</strong> We believe your data is yours. That's why every tool on this website runs entirely in your browser using JavaScript. We do not have a backend, we do not have a database, and we never see or store the JSON data you paste here.
-          </li>
-          <li>
-            <strong className="text-gray-900 dark:text-gray-200">No Friction:</strong> You shouldn't have to create an account, log in, or provide an email address just to format a JSON string. Open the page, paste your data, get your result, and leave.
-          </li>
-          <li>
-            <strong className="text-gray-900 dark:text-gray-200">Fast & Minimalist:</strong> We strip away the unnecessary. No heavy animations, no bloated libraries, and no distracting colors. Just a clean, Apple-inspired interface that gets out of your way and lets you work.
-          </li>
-        </ul>
-
-        <h2 className="text-xl font-bold mt-8 mb-4 text-gray-900 dark:text-white">Open Web</h2>
-        <p className="text-gray-600 dark:text-gray-400">
-          This project is built using modern web technologies including Next.js, React, and Tailwind CSS. It is an example of what can be built when you focus on performance, usability, and privacy first.
+      <div className="mb-8 max-w-6xl mx-auto">
+        <Breadcrumb items={[{ label: "About" }]} />
+        <h1 className="text-xl md:text-2xl font-bold tracking-tight text-gray-900 dark:text-white mb-3 mt-4">
+          About JSON Toolkit
+        </h1>
+        <p className="text-lg text-gray-600 dark:text-gray-400 text-justify">
+          Engineered for performance and privacy, delivering sophisticated JSON utilities for developers and enterprise users. Our comprehensive suite of client-side tools empowers engineering teams to validate, format, and transform complex JSON payloads with zero latency and absolute data security. By eliminating server-side processing, we guarantee that your proprietary schemas and sensitive data never leave your local environment.
         </p>
       </div>
+
+      <div className="mt-8 bg-white dark:bg-gray-950 border border-gray-200 dark:border-gray-800 rounded-2xl p-8 md:p-12 shadow-sm max-w-6xl mx-auto">
+        <div className="prose prose-slate dark:prose-invert max-w-none text-justify">
+          <p className="text-gray-600 dark:text-gray-400 mb-6">
+            JSON Toolkit was architected with a singular objective: to deliver a superior, browser-native environment for processing JSON data. Whether you are a seasoned software engineer debugging complex REST API payloads, a data scientist structuring extensive datasets, or a systems architect designing data pipelines, this platform is optimized to streamline your technical workflow.
+          </p>
+          <p className="text-gray-600 dark:text-gray-400">
+            Recognizing that existing web-based utilities often suffer from ad-heavy interfaces, poor user experience (UX), and severe data privacy vulnerabilities—specifically the transmission of sensitive data to external backend servers—we engineered a secure, client-side alternative.
+          </p>
+
+          <h2 className="text-xl font-bold mt-8 mb-4 text-gray-900 dark:text-white">Architectural Philosophy</h2>
+          <ul className="space-y-4 text-gray-600 dark:text-gray-400">
+            <li>
+              <strong className="text-gray-900 dark:text-gray-200">Zero-Trust Architecture (100% Client-Side):</strong> We operate on a strict zero-trust model. All computational operations and data parsing occur exclusively within your browser's execution environment using standard Web APIs. We do not maintain a backend infrastructure, utilize databases, or transmit your JSON payloads.
+            </li>
+            <li>
+              <strong className="text-gray-900 dark:text-gray-200">Frictionless Utility:</strong> We eliminate onboarding barriers. There are no authentication protocols, account creation requirements, or session tracking mechanisms. Access the utility, execute your data transformation, and exit seamlessly.
+            </li>
+            <li>
+              <strong className="text-gray-900 dark:text-gray-200">Optimized Performance & Minimalist UI:</strong> We prioritize computational efficiency and cognitive clarity. By excluding superfluous libraries and complex DOM manipulations, we deliver an ultra-responsive interface designed strictly for professional productivity.
+            </li>
+          </ul>
+
+          <h2 className="text-xl font-bold mt-8 mb-4 text-gray-900 dark:text-white">Strict Privacy Commitment</h2>
+          <p className="text-gray-600 dark:text-gray-400 mb-6">
+            Security and privacy are foundational architectural principles of JSON Toolkit. By exclusively leveraging modern browser APIs for DOM and memory management, we ensure that data processing remains strictly isolated within your local hardware footprint. You can confidently process proprietary schemas, sensitive customer records, or API credentials with absolute immunity from server-side data exfiltration.
+          </p>
+
+          <h2 className="text-xl font-bold mt-8 mb-4 text-gray-900 dark:text-white">Modern Technology Stack</h2>
+          <p className="text-gray-600 dark:text-gray-400">
+            This platform is engineered using a modern web stack comprising Next.js, React, and Tailwind CSS. It demonstrates the capabilities of modern frontend architectures when prioritizing performance benchmarks, accessibility, and strict data privacy. We employ continuous integration practices to iterate and refine our utilities based on developer community feedback.
+          </p>
+        </div>
       </div>
     </PageContainer>
   );

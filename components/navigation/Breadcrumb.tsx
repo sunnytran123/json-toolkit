@@ -14,13 +14,13 @@ interface BreadcrumbProps {
 export function Breadcrumb({ items }: BreadcrumbProps) {
   return (
     <nav aria-label="Breadcrumb" className="mb-6">
-      <ol className="flex items-center space-x-2 text-sm text-gray-500 dark:text-gray-400">
+      <ol className="flex items-center space-x-2 text-base text-gray-500 dark:text-gray-400">
         <li>
           <Link
             href="/"
             className="flex items-center hover:text-gray-900 dark:hover:text-gray-100 transition-colors"
           >
-            <Home className="h-4 w-4" />
+            <Home className="h-5 w-5" />
             <span className="sr-only">Home</span>
           </Link>
         </li>
@@ -28,7 +28,7 @@ export function Breadcrumb({ items }: BreadcrumbProps) {
         {items.map((item, index) => (
           <React.Fragment key={index}>
             <li>
-              <ChevronRight className="h-4 w-4 text-gray-400 dark:text-gray-600" />
+              <ChevronRight className="h-5 w-5 text-gray-400 dark:text-gray-600" />
             </li>
             <li>
               {item.href ? (
