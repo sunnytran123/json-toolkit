@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { PageContainer, ToolHeader } from "@/components/layout/PageContainer";
 import { JsonEditor } from "@/components/json/JsonEditor";
 import { JsonToolbar } from "@/components/json/JsonToolbar";
@@ -10,7 +10,6 @@ import { jsonToTs } from "@/lib/json/ts-generator";
 import { sampleData } from "@/lib/json/samples";
 import { useCopyToClipboard } from "@/hooks/useCopyToClipboard";
 import { useDownload } from "@/hooks/useDownload";
-import { Play } from "lucide-react";
 import { Button } from "@/components/ui/Button";
 import { faq } from "./faq";
 
@@ -22,17 +21,20 @@ export default function JsonToTsPage() {
   const { downloadFile } = useDownload();
   const [rootName, setRootName] = useState("Root");
 
-  const handleConvert = () => {
-    if (!input.trim()) return;
+  useEffect(() => {
+    if (!input.trim()) {
+      setOutput("");
+      setError(null);
+      return;
+    }
     try {
       const tsCode = jsonToTs(input, rootName || "Root");
       setOutput(tsCode);
       setError(null);
     } catch (e: any) {
       setError(e.message || "Failed to convert JSON");
-      setOutput("");
     }
-  };
+  }, [input, rootName]);
 
   const handleSample = () => {
     const data = JSON.stringify(sampleData.ts, null, 2);
@@ -82,10 +84,6 @@ export default function JsonToTsPage() {
                   onChange={(e) => setRootName(e.target.value)}
                   className="h-8 w-24 text-xs border border-gray-200 rounded-md px-2 bg-white dark:bg-gray-900 dark:border-gray-800 focus:outline-none focus:ring-1 focus:ring-blue-500"
                 />
-                <Button size="sm" onClick={handleConvert} className="gap-1.5 h-8 text-xs bg-blue-600 hover:bg-blue-700 text-white dark:bg-blue-600 dark:hover:bg-blue-700 dark:text-white border-0">
-                  <Play className="h-3.5 w-3.5 fill-current" />
-                  Convert
-                </Button>
               </>
             }
           />

@@ -9,7 +9,6 @@ import { FAQ } from "@/components/content/FAQ";
 import { validateJson } from "@/lib/json/validator";
 import { sampleData } from "@/lib/json/samples";
 import { CheckCircle, XCircle } from "lucide-react";
-import { Button } from "@/components/ui/Button";
 import { faq } from "./faq";
 
 export default function JsonValidatorPage() {
@@ -39,17 +38,6 @@ export default function JsonValidatorPage() {
     setErrorDetails(null);
   };
   
-  const handleInvalidSample = () => {
-    const invalidJson = `{
-  "name": "John",
-  "age": 30,
-  "city": "New York"
-  "missingComma": true
-}`;
-    setInput(invalidJson);
-    setIsValid(null);
-    setErrorDetails(null);
-  };
 
   const handleClear = () => {
     setInput("");
@@ -76,13 +64,6 @@ export default function JsonValidatorPage() {
             onSample={handleSample}
             onClear={handleClear}
             onUpload={(content) => { setInput(content); setIsValid(null); setErrorDetails(null); }}
-            actions={
-              <>
-                <Button variant="outline" size="sm" onClick={handleInvalidSample} className="text-xs h-8">
-                  Test Invalid
-                </Button>
-              </>
-            }
           />
           <JsonEditor
             value={input}

@@ -83,7 +83,7 @@ export function JsonToolbar({
         )}
         
         {onClear && (
-          <Button variant="ghost" size="sm" onClick={onClear} className="gap-1.5 text-xs h-8 text-red-600 hover:text-red-700 hover:bg-red-50 dark:text-red-400 dark:hover:bg-red-900/20">
+          <Button variant="ghost" size="sm" onClick={onClear} className="gap-1.5 text-xs h-8 text-red-600 border border-red-200 hover:border-red-300 hover:text-red-700 hover:bg-red-50 dark:text-red-400 dark:border-red-900/50 dark:hover:border-red-800 dark:hover:bg-red-900/20">
             <Trash2 className="h-3.5 w-3.5" />
             Clear
           </Button>

@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { PageContainer, ToolHeader } from "@/components/layout/PageContainer";
 import { JsonEditor } from "@/components/json/JsonEditor";
 import { JsonToolbar } from "@/components/json/JsonToolbar";
@@ -20,8 +20,12 @@ export default function JsonTreeViewerPage() {
   // We use a simple key change to force re-render of the tree for collapse/expand all
   const [treeKey, setTreeKey] = useState(0);
 
-  const handleView = () => {
-    if (!input.trim()) return;
+  useEffect(() => {
+    if (!input.trim()) {
+      setParsedData(null);
+      setError(null);
+      return;
+    }
     try {
       const data = JSON.parse(input);
       setParsedData(data);
@@ -30,7 +34,7 @@ export default function JsonTreeViewerPage() {
       setError(e.message || "Invalid JSON");
       setParsedData(null);
     }
-  };
+  }, [input]);
 
   const handleSample = () => {
     const data = JSON.stringify(sampleData.treeViewer, null, 2);
@@ -63,17 +67,11 @@ export default function JsonTreeViewerPage() {
             title="JSON Input"
             onSample={handleSample}
             onClear={handleClear}
-            onUpload={(content) => { setInput(content); setError(null); setParsedData(null); }}
-            actions={
-              <Button size="sm" onClick={handleView} className="gap-1.5 h-8 text-xs bg-blue-600 hover:bg-blue-700 text-white dark:bg-blue-600 dark:hover:bg-blue-700 dark:text-white border-0">
-                <Play className="h-3.5 w-3.5 fill-current" />
-                View Tree
-              </Button>
-            }
+            onUpload={(content) => { setInput(content); setError(null); }}
           />
           <JsonEditor
             value={input}
-            onChange={(val) => { setInput(val); setParsedData(null); }}
+            onChange={setInput}
             error={error}
             className="rounded-t-none border-t-0 flex-grow"
           />
@@ -98,7 +96,7 @@ export default function JsonTreeViewerPage() {
               </div>
             ) : (
               <div className="h-full flex items-center justify-center text-gray-400">
-                Paste JSON and click View Tree
+                Paste JSON to see the tree structure
               </div>
             )}
           </div>

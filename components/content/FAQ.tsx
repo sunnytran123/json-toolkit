@@ -1,5 +1,5 @@
 import React from "react";
-import { ChevronDown } from "lucide-react";
+import { ChevronDown, ArrowRight } from "lucide-react";
 
 interface FAQItem {
   question: string;
@@ -27,8 +27,9 @@ export function FAQ({ items }: FAQProps) {
               {item.question}
               <ChevronDown className="h-5 w-5 text-gray-500 transition duration-300 group-open:-rotate-180" />
             </summary>
-            <div className="px-4 pb-4 text-gray-600 dark:text-gray-400 leading-relaxed text-sm">
-              {item.answer}
+            <div className="px-4 pb-4 text-gray-600 dark:text-gray-400 leading-relaxed text-sm flex items-start gap-2">
+              <ArrowRight className="h-4 w-4 mt-0.5 shrink-0 text-black-500" />
+              <span>{item.answer}</span>
             </div>
           </details>
         ))}
