@@ -43,7 +43,7 @@ export default function Home() {
       </section>
 
       {/* Tools Section */}
-      <section id="tools" className="py-16 md:py-24">
+      <section id="tools" className="pt-16 pb-8 md:pt-24 md:pb-8">
         <PageContainer>
           <div className="text-center mb-12">
             <h2 className="text-2xl md:text-3xl font-bold tracking-tight text-gray-900 dark:text-white mb-4">
@@ -76,43 +76,50 @@ export default function Home() {
       </section>
 
       {/* Features/Benefits */}
-      <section className="bg-gray-50 py-16 dark:bg-gray-900/30 border-t border-gray-200 dark:border-gray-800">
-        <PageContainer className="max-w-4xl mx-auto">
+      <section className="bg-white pb-16 pt-4 dark:bg-gray-950">
+        <PageContainer className="max-w-6xl mx-auto">
+          <div className="relative flex items-center mb-10">
+            <div className="flex-grow border-t border-gray-200 dark:border-gray-800"></div>
+            <span className="flex-shrink-0 px-4 text-sm font-semibold text-gray-400 dark:text-gray-500 tracking-widest uppercase">
+              Core Features
+            </span>
+            <div className="flex-grow border-t border-gray-200 dark:border-gray-800"></div>
+          </div>
           <div className="grid grid-cols-2 md:grid-cols-5 gap-8 text-center text-sm text-gray-600 dark:text-gray-400">
-            <div className="flex flex-col items-center gap-2">
-              <div className="h-12 w-12 rounded-full bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 flex items-center justify-center mb-2 text-blue-600 dark:text-blue-400 shadow-sm transition-transform hover:scale-105">
-                <AlignLeft className="h-5 w-5" />
+            <div className="flex flex-col items-center gap-2 group cursor-pointer">
+              <div className="h-14 w-14 rounded-2xl bg-white dark:bg-gray-900 border border-gray-100 dark:border-gray-800 flex items-center justify-center mb-2 text-blue-600 dark:text-blue-400 shadow-sm transition-all duration-300 group-hover:shadow-md group-hover:border-blue-200 dark:group-hover:border-blue-800 group-hover:-translate-y-1 group-hover:bg-blue-50 dark:group-hover:bg-blue-900/20">
+                <AlignLeft className="h-6 w-6" />
               </div>
-              <span className="font-semibold text-gray-900 dark:text-gray-100">Format</span>
+              <span className="font-semibold text-gray-900 dark:text-gray-100 group-hover:text-blue-600 transition-colors">Format</span>
               <span className="text-xs text-gray-500">Beautify data</span>
             </div>
-            <div className="flex flex-col items-center gap-2">
-              <div className="h-12 w-12 rounded-full bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 flex items-center justify-center mb-2 text-blue-600 dark:text-blue-400 shadow-sm transition-transform hover:scale-105">
-                <CheckCircle className="h-5 w-5" />
+            <div className="flex flex-col items-center gap-2 group cursor-pointer">
+              <div className="h-14 w-14 rounded-2xl bg-white dark:bg-gray-900 border border-gray-100 dark:border-gray-800 flex items-center justify-center mb-2 text-blue-600 dark:text-blue-400 shadow-sm transition-all duration-300 group-hover:shadow-md group-hover:border-blue-200 dark:group-hover:border-blue-800 group-hover:-translate-y-1 group-hover:bg-blue-50 dark:group-hover:bg-blue-900/20">
+                <CheckCircle className="h-6 w-6" />
               </div>
-              <span className="font-semibold text-gray-900 dark:text-gray-100">Validate</span>
+              <span className="font-semibold text-gray-900 dark:text-gray-100 group-hover:text-blue-600 transition-colors">Validate</span>
               <span className="text-xs text-gray-500">Find syntax errors</span>
             </div>
-            <div className="flex flex-col items-center gap-2">
-              <div className="h-12 w-12 rounded-full bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 flex items-center justify-center mb-2 text-blue-600 dark:text-blue-400 shadow-sm transition-transform hover:scale-105">
-                <FileDown className="h-5 w-5" />
+            <div className="flex flex-col items-center gap-2 group cursor-pointer">
+              <div className="h-14 w-14 rounded-2xl bg-white dark:bg-gray-900 border border-gray-100 dark:border-gray-800 flex items-center justify-center mb-2 text-blue-600 dark:text-blue-400 shadow-sm transition-all duration-300 group-hover:shadow-md group-hover:border-blue-200 dark:group-hover:border-blue-800 group-hover:-translate-y-1 group-hover:bg-blue-50 dark:group-hover:bg-blue-900/20">
+                <FileDown className="h-6 w-6" />
               </div>
-              <span className="font-semibold text-gray-900 dark:text-gray-100">Minify</span>
+              <span className="font-semibold text-gray-900 dark:text-gray-100 group-hover:text-blue-600 transition-colors">Minify</span>
               <span className="text-xs text-gray-500">Compress files</span>
             </div>
-            <div className="flex flex-col items-center gap-2">
-              <div className="h-12 w-12 rounded-full bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 flex items-center justify-center mb-2 text-blue-600 dark:text-blue-400 shadow-sm transition-transform hover:scale-105">
-                <Braces className="h-5 w-5" />
+            <div className="flex flex-col items-center gap-2 group cursor-pointer">
+              <div className="h-14 w-14 rounded-2xl bg-white dark:bg-gray-900 border border-gray-100 dark:border-gray-800 flex items-center justify-center mb-2 text-blue-600 dark:text-blue-400 shadow-sm transition-all duration-300 group-hover:shadow-md group-hover:border-blue-200 dark:group-hover:border-blue-800 group-hover:-translate-y-1 group-hover:bg-blue-50 dark:group-hover:bg-blue-900/20">
+                <Braces className="h-6 w-6" />
               </div>
-              <span className="font-semibold text-gray-900 dark:text-gray-100">Tree View</span>
+              <span className="font-semibold text-gray-900 dark:text-gray-100 group-hover:text-blue-600 transition-colors">Tree View</span>
               <span className="text-xs text-gray-500">Explore structures</span>
             </div>
-            <div className="flex flex-col items-center gap-2 col-span-2 md:col-span-1">
-              <div className="h-12 w-12 rounded-full bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 flex items-center justify-center mb-2 text-blue-600 dark:text-blue-400 shadow-sm transition-transform hover:scale-105">
-                <FileJson className="h-5 w-5" />
+            <div className="flex flex-col items-center gap-2 col-span-2 md:col-span-1 group cursor-pointer">
+              <div className="h-14 w-14 rounded-2xl bg-white dark:bg-gray-900 border border-gray-100 dark:border-gray-800 flex items-center justify-center mb-2 text-blue-600 dark:text-blue-400 shadow-sm transition-all duration-300 group-hover:shadow-md group-hover:border-blue-200 dark:group-hover:border-blue-800 group-hover:-translate-y-1 group-hover:bg-blue-50 dark:group-hover:bg-blue-900/20">
+                <FileJson className="h-6 w-6" />
               </div>
-              <span className="font-semibold text-gray-900 dark:text-gray-100">Convert</span>
-              <span className="text-xs text-gray-500">JSON to CSV</span>
+              <span className="font-semibold text-gray-900 dark:text-gray-100 group-hover:text-blue-600 transition-colors">Convert</span>
+              <span className="text-xs text-gray-500">To CSV, TS & more</span>
             </div>
           </div>
         </PageContainer>
