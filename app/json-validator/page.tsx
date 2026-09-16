@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { PageContainer, ToolHeader } from "@/components/layout/PageContainer";
 import { JsonEditor } from "@/components/json/JsonEditor";
 import { JsonToolbar } from "@/components/json/JsonToolbar";
@@ -8,7 +8,7 @@ import { RelatedTools } from "@/components/content/RelatedTools";
 import { FAQ } from "@/components/content/FAQ";
 import { validateJson } from "@/lib/json/validator";
 import { sampleData } from "@/lib/json/samples";
-import { CheckCircle, XCircle, Play } from "lucide-react";
+import { CheckCircle, XCircle } from "lucide-react";
 import { Button } from "@/components/ui/Button";
 import { faq } from "./faq";
 
@@ -17,7 +17,7 @@ export default function JsonValidatorPage() {
   const [isValid, setIsValid] = useState<boolean | null>(null);
   const [errorDetails, setErrorDetails] = useState<{ error?: string; line?: number; column?: number } | null>(null);
 
-  const handleValidate = () => {
+  useEffect(() => {
     if (!input.trim()) {
       setIsValid(null);
       setErrorDetails(null);
@@ -31,7 +31,7 @@ export default function JsonValidatorPage() {
     } else {
       setErrorDetails(null);
     }
-  };
+  }, [input]);
 
   const handleSample = () => {
     setInput(JSON.stringify(sampleData.validator, null, 2));
@@ -80,10 +80,6 @@ export default function JsonValidatorPage() {
               <>
                 <Button variant="outline" size="sm" onClick={handleInvalidSample} className="text-xs h-8">
                   Test Invalid
-                </Button>
-                <Button size="sm" onClick={handleValidate} className="gap-1.5 h-8 text-xs bg-blue-600 hover:bg-blue-700 text-white dark:bg-blue-600 dark:hover:bg-blue-700 dark:text-white border-0">
-                  <Play className="h-3.5 w-3.5 fill-current" />
-                  Validate
                 </Button>
               </>
             }

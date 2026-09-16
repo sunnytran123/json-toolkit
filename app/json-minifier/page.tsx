@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { PageContainer, ToolHeader } from "@/components/layout/PageContainer";
 import { JsonEditor } from "@/components/json/JsonEditor";
 import { JsonToolbar } from "@/components/json/JsonToolbar";
@@ -10,8 +10,7 @@ import { minifyJson } from "@/lib/json/minifier";
 import { sampleData } from "@/lib/json/samples";
 import { useCopyToClipboard } from "@/hooks/useCopyToClipboard";
 import { useDownload } from "@/hooks/useDownload";
-import { Play } from "lucide-react";
-import { Button } from "@/components/ui/Button";
+// Button and Play removed as they are no longer needed
 import { faq } from "./faq";
 
 export default function JsonMinifierPage() {
@@ -22,8 +21,13 @@ export default function JsonMinifierPage() {
   const { copyToClipboard } = useCopyToClipboard();
   const { downloadFile } = useDownload();
 
-  const handleMinify = () => {
-    if (!input.trim()) return;
+  useEffect(() => {
+    if (!input.trim()) {
+      setOutput("");
+      setError(null);
+      setStats(null);
+      return;
+    }
     try {
       const minified = minifyJson(input);
       setOutput(minified);
@@ -39,10 +43,8 @@ export default function JsonMinifierPage() {
       });
     } catch (e: any) {
       setError(e.message || "Invalid JSON");
-      setOutput("");
-      setStats(null);
     }
-  };
+  }, [input]);
 
   const handleSample = () => {
     const data = JSON.stringify(sampleData.minifier, null, 2);
@@ -93,12 +95,6 @@ export default function JsonMinifierPage() {
             onSample={handleSample}
             onClear={handleClear}
             onUpload={(content) => { setInput(content); setError(null); }}
-            actions={
-              <Button size="sm" onClick={handleMinify} className="gap-1.5 h-8 text-xs bg-blue-600 hover:bg-blue-700 text-white dark:bg-blue-600 dark:hover:bg-blue-700 dark:text-white border-0">
-                <Play className="h-3.5 w-3.5 fill-current" />
-                Minify
-              </Button>
-            }
           />
           <JsonEditor
             value={input}

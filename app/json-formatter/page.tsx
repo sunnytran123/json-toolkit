@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { PageContainer, ToolHeader } from "@/components/layout/PageContainer";
 import { JsonEditor } from "@/components/json/JsonEditor";
 import { JsonToolbar } from "@/components/json/JsonToolbar";
@@ -10,8 +10,7 @@ import { formatJson } from "@/lib/json/formatter";
 import { sampleData } from "@/lib/json/samples";
 import { useCopyToClipboard } from "@/hooks/useCopyToClipboard";
 import { useDownload } from "@/hooks/useDownload";
-import { Play } from "lucide-react";
-import { Button } from "@/components/ui/Button";
+// Button and Play removed as they are no longer needed
 import { faq } from "./faq";
 
 export default function JsonFormatterPage() {
@@ -22,17 +21,20 @@ export default function JsonFormatterPage() {
   const { copyToClipboard } = useCopyToClipboard();
   const { downloadFile } = useDownload();
 
-  const handleFormat = () => {
-    if (!input.trim()) return;
+  useEffect(() => {
+    if (!input.trim()) {
+      setOutput("");
+      setError(null);
+      return;
+    }
     try {
       const formatted = formatJson(input, space);
       setOutput(formatted);
       setError(null);
     } catch (e: any) {
       setError(e.message || "Invalid JSON");
-      setOutput("");
     }
-  };
+  }, [input, space]);
 
   const handleSample = () => {
     const data = JSON.stringify(sampleData.formatter, null, 2);
@@ -83,10 +85,6 @@ export default function JsonFormatterPage() {
                   <option value={2}>2 Spaces</option>
                   <option value={4}>4 Spaces</option>
                 </select>
-                <Button size="sm" onClick={handleFormat} className="gap-1.5 h-8 text-xs bg-blue-600 hover:bg-blue-700 text-white dark:bg-blue-600 dark:hover:bg-blue-700 dark:text-white border-0">
-                  <Play className="h-3.5 w-3.5 fill-current" />
-                  Format
-                </Button>
               </>
             }
           />
