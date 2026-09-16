@@ -17,7 +17,7 @@ export function FAQ({ items }: FAQProps) {
       <h2 className="text-xl font-bold tracking-tight text-gray-900 dark:text-white mb-6">
         Frequently Asked Questions
       </h2>
-      <div className="space-y-4 max-w-3xl">
+      <div className="space-y-4">
         {items.map((item, i) => (
           <details 
             key={i} 
