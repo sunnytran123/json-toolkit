@@ -11,11 +11,25 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://jsontoolkit.com'),
   title: {
     template: "%s | JSON Toolkit",
-    default: "JSON Toolkit - Simple tools for working with JSON",
+    default: "JSON Toolkit - Free Online JSON Tools & Converters",
   },
-  description: "Format, validate, minify, view and convert JSON directly in your browser. Free, fast and private.",
+  description: "Format, validate, minify, view and convert JSON directly in your browser. Free, fast and private online JSON tools for developers.",
+  openGraph: {
+    type: "website",
+    locale: "en_US",
+    url: "https://jsontoolkit.com",
+    title: "JSON Toolkit - Free Online JSON Tools",
+    description: "Format, validate, minify, view and convert JSON directly in your browser. Free, fast and private.",
+    siteName: "JSON Toolkit",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "JSON Toolkit",
+    description: "Free, fast and private online JSON tools for developers.",
+  },
 };
 
 export default function RootLayout({
