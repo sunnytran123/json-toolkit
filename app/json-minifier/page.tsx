@@ -87,7 +87,7 @@ export default function JsonMinifierPage() {
         ]}
       />
 
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 h-[500px] mb-8">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 h-[600px] mb-8">
         {/* Input Section */}
         <div className="flex flex-col h-full shadow-sm rounded-lg">
           <JsonToolbar
