@@ -26,7 +26,7 @@ export function jsonToCsv(input: string): string {
     
     // Extract headers
     const headersSet = new Set<string>();
-    parsed.forEach(item => {
+    parsed.forEach((item: any) => {
       if (item && typeof item === 'object' && !Array.isArray(item)) {
         Object.keys(item).forEach(key => headersSet.add(key));
       }
@@ -41,7 +41,7 @@ export function jsonToCsv(input: string): string {
     // Create CSV rows
     const rows = [headers.join(",")];
     
-    parsed.forEach(item => {
+    parsed.forEach((item: any) => {
       const row = headers.map(header => {
         let val = item[header];
         if (val === null || val === undefined) {
