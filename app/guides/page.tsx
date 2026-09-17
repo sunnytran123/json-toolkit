@@ -5,8 +5,11 @@ import { Metadata } from "next";
 import { FileText } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "JSON Guides",
-  description: "Learn everything you need to know about JSON, how to format it, and how to validate it.",
+  title: "JSON Guides & Tutorials",
+  description: "Learn everything you need to know about JSON, how to format it, validate it, and convert it. Free guides and tutorials for developers.",
+  alternates: {
+    canonical: '/guides',
+  },
 };
 
 const guides = [

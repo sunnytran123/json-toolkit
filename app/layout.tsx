@@ -30,6 +30,9 @@ export const metadata: Metadata = {
     title: "JSON Toolkit",
     description: "Free, fast and private online JSON tools for developers.",
   },
+  alternates: {
+    canonical: '/',
+  },
 };
 
 export default function RootLayout({

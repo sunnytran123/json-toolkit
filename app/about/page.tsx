@@ -3,8 +3,11 @@ import { Breadcrumb } from "@/components/navigation/Breadcrumb";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "About Us",
-  description: "Learn more about JSON Toolkit and our mission to build simple, fast, and private JSON tools.",
+  title: "About JSON Toolkit",
+  description: "Learn more about JSON Toolkit and our mission to build simple, fast, and private JSON tools for developers around the world.",
+  alternates: {
+    canonical: '/about',
+  },
 };
 
 export default function AboutPage() {
